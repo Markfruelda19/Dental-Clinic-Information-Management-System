@@ -59,6 +59,8 @@ Growth in patient registration
 
 Helps optimize clinic operations and improve patient experience
 
+<img width="1593" height="742" alt="DEMOGRAPHICS" src="https://github.com/user-attachments/assets/9f613537-8b1c-4547-8702-f9b5f1816419" />
 
+<img width="1600" height="747" alt="appointment" src="https://github.com/user-attachments/assets/90b513df-0a2e-40ae-b9a3-32f23885d4f7" />
 
 
