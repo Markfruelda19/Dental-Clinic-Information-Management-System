@@ -60,11 +60,5 @@ Growth in patient registration
 Helps optimize clinic operations and improve patient experience
 
 
-🛠️ Technologies Used
 
-Category	   Tools
-Frontend	   HTML, CSS, JavaScript
-Backend	     PHP
-Database	   MySQL
-Server	     Apache (via XAMPP / WAMP / AWS EC2)
 
