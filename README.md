@@ -63,6 +63,6 @@ Helps optimize clinic operations and improve patient experience
 
 <img width="1600" height="747" alt="appointment" src="https://github.com/user-attachments/assets/90b513df-0a2e-40ae-b9a3-32f23885d4f7" />
 
-<img width="1916" height="996" alt="Billing" src="https://github.com/user-attachments/assets/8f65f7e2-7485-40d4-92a3-7d7e672cdc9b" />
+
 
 
