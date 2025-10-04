@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background */
+}
+
+.invoice {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #fff; /* White card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.invoice h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid #000000; /* Adds a professional underline */
+    padding-bottom: 10px;
+}
+
+.invoice p {
+    font-size: 16px;
+    color: #555;
+    margin: 8px 0;
+}
+
+.invoice ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.invoice ul li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+    font-size: 14px;
+    color: #333;
+}
+
+.invoice ul li:last-child {
+    border-bottom: none;
+}
+
+.invoice table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.invoice table th, .invoice table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.invoice table th {
+    background-color: #f1f1f1;
+    color: #444;
+}
+
+.invoice-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Print Button Styling */
+.invoice-footer button {
+    background-color: #000000; /* Professional green for print */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
+}
+
+.invoice-footer button:hover {
+    background-color: #585858; /* Darker green on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+.invoice-footer button:active {
+    background-color: #000000; /* Even darker green on click */
+    transform: translateY(0); /* Reset lift on click */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+}

@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: 'Varela Round', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.content {
+    max-width: 90%; /* Increased width to fill more space */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: left; /* Aligned the container content to the left */
+}
+
+h1 {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.8rem; /* Increased font size */
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 1.1rem; /* Increased font size for better readability */
+}
+
+.appointment-table thead th {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 14px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 1px solid #dddddd;
+    font-size: 1rem;
+}
+
+.appointment-table tbody tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.appointment-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.appointment-table tbody td {
+    padding: 14px 20px; /* Increased padding for better spacing */
+    border: 1px solid #dddddd;
+    vertical-align: middle;
+}
+
+.appointment-table tbody tr:hover {
+    background-color: #e9f5ff;
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 8px 14px; /* Increased padding for larger badges */
+    font-size: 1rem; /* Increased badge font size */
+    font-weight: 600;
+    text-transform: capitalize;
+    border-radius: 12px;
+}
+
+.status-badge.completed {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.status-badge.confirmed {
+    background-color: #ffc107;
+    color: #ffffff;
+}
+
+.status-badge.pending {
+    background-color: #17a2b8;
+    color: #ffffff;
+}
+
+.status-badge.cancelled {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+/* No Data Message */
+.no-data {
+    text-align: center;
+    font-size: 1.2rem; /* Increased font size */
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 15px;
+    }
+
+    .appointment-table thead {
+        display: none;
+    }
+
+    .appointment-table tbody tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .appointment-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .appointment-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-right: 10px;
+        color: #555;
+    }
+}

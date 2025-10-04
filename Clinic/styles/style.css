@@ -1,0 +1,179 @@
+/* General Reset and Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: varela round, sans-serif; 
+}
+
+/* Container for Flex Layout */
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Navigation Sidebar */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px; /* Collapsed width */
+  height: 100vh;
+  background-color: #141414;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+  border-top: 2px solid #fdfdfd;
+  border-bottom: 2px solid #fdfdfd;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: width 0.4s ease; /* Smooth transition for expanding */
+}
+
+nav.expanded {
+  width: 250px; /* Expanded width */
+}
+
+nav.collapsed {
+  width: 90px; /* Collapsed width */
+}
+
+/* Toggle Button */
+#toggle-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-in-out; /* Smooth rotation effect */
+}
+
+#toggle-btn:hover {
+  transform: rotate(90deg);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 15px;
+  flex-grow: 1;
+  padding-left: 10px; /* Ensures icons are consistently aligned */
+}
+
+/* Logo Section */
+nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  color: #010305;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding-left: 35px; /* Consistent alignment */
+}
+
+nav.expanded .logo {
+  justify-content: flex-start; /* Align logo text to the left in expanded view */
+  padding-left: 15px; /* Adds a little more space for logo text alignment */
+}
+
+nav .logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+nav .logo .nav-item {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ecf0f1;
+  display: none;
+}
+
+nav.expanded .logo .nav-item {
+  display: inline;
+}
+
+/* Navigation Links */
+nav ul li {
+  position: relative;
+  width: 100%;
+}
+
+nav ul li a,
+.logout a { /* Apply same styles to logout link */
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  width: 100%;
+  border-radius: 25px 0 0 25px; /* Rounded corners on the left */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding-left: 10px; /* Consistent alignment for icons */
+  position: relative;
+  z-index: 1;
+}
+
+nav ul li a:hover,
+nav ul li a.active,
+.logout a:hover,
+.logout a.active { /* Apply same hover and active styles for logout link */
+  background-color: #ffffff; /* Background color */
+  color: #141414; /* Text color */
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.15); /* Soft shadow on the left */
+}
+
+/* Icon and Text Styling */
+nav ul li a .fas,
+.logout a .fas { /* Style icons in logout link */
+  font-size: 24px;
+  width: 40px; /* Fixed width for icon alignment */
+  color: inherit;
+  text-align: center; /* Centers the icons */
+  z-index: 1;
+}
+
+.nav-item {
+  display: none;
+  z-index: 1;
+}
+
+nav.expanded .nav-item {
+  display: inline;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+/* Logout Button at the Bottom */
+.logout {
+  width: 100%;
+  margin-top: auto; /* Push logout button to the bottom */
+  padding-bottom: 20px;
+}
+
+/* Iframe Styling */
+iframe {
+  width: calc(100% - 90px);
+  height: 100vh;
+  border: none;
+  transition: width 0.4s ease-in-out;
+}
+
+nav.expanded + iframe {
+  width: calc(100% - 250px); /* Adjusted for expanded sidebar */
+}

@@ -1,0 +1,125 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Header */
+.header {
+    font-size: 2.8rem; /* Larger font for header */
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    padding: 15px 0;
+    border-bottom: 3px solid #000000; /* Add a professional underline */
+    padding-left: 20px;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 20px;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #000000, #000000); /* Gradient underline */
+}
+
+/* Patient Information Container */
+.patient-info-container {
+    max-width: 90%; /* Occupies more space */
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Professional shadow */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Information Section */
+.info-section {
+    background-color: #f9fbff; /* Light background for info cards */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* Subtle shadow for sections */
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+
+.info-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+    border-bottom: 2px solid #e4e7ec;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+/* Rows and Columns */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px; /* Ensures minimum column size */
+    padding: 15px;
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.column:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Emphasize hover */
+}
+
+/* Text Styling */
+p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+strong {
+    color: #000000;
+    font-weight: 600;
+    font-size: 1.2rem; /* Highlighted labels */
+}
+
+/* Error Message */
+.error {
+    color: #e74c3c;
+    font-size: 1.1rem;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .patient-info-container {
+        max-width: 95%; /* Adjust container width for smaller screens */
+    }
+
+    .row {
+        flex-direction: column; /* Stack rows vertically */
+    }
+
+    .column {
+        min-width: 100%; /* Full width for smaller screens */
+    }
+}

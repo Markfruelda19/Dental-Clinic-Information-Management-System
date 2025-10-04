@@ -1,0 +1,260 @@
+/* General Styling */
+body {
+    font-family: 'Varela Round', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
+    height: 100%;
+}
+
+/* Container */
+.appointment-container {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Added rounded corners */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Content Styling */
+.appointment-content {
+    flex-grow: 1; /* Take remaining space */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding in width/height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for content */
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    color: #fdfdfd;
+    font-weight: bold;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.appointment-thin-line {
+    border: none;
+    border-top: 2px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px; /* Rounded corners for breadcrumb */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb span {
+    color: #4a90e2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb span:hover {
+    text-decoration: underline;
+    color: #2c3e50;
+}
+
+.breadcrumb .hidden {
+    display: none;
+}
+
+/* Tabs Styling */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.tab {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    font-size: 14px;
+}
+.tab:hover {
+    color: #4a90e2;
+    background-color: #f4f6f9;
+    border-radius: 5px;
+}
+
+.tab.active {
+    color: #4a90e2;
+    border-bottom: 2px solid #4a90e2;
+}
+
+/* Table Styling */
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Rounded corners for table */
+    overflow: hidden; /* Prevent border overflow */
+}
+
+.appointment-table thead {
+    background: #000000;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+td {
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Button Styling */
+button {
+    border: none;
+    padding: 8px 15px;
+    font-size: 14px;
+    border-radius: 8px; /* More rounded buttons */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle button shadow */
+    font-weight: bold;
+}
+
+.view-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.view-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #d33;
+    transform: translateY(-2px);
+}
+
+/* Transitions */
+.hidden {
+    display: none;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.4s ease-in-out;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .appointment-table {
+        overflow-x: auto;
+    }
+
+    th, td {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .appointment-content {
+        padding: 15px;
+    }
+
+    .appointment-table th, .appointment-table td {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Back Button Styling */
+.back-btn {
+    margin-top: 100px;
+    padding: 10px 20px;
+    background: #2c3e50;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #1c2b40;
+}
+/* Header Section */
+.patients-header {
+    background: #000000;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px; /* Rounded edges */
+    width: 97%; /* Align with breadcrumb, table, and thin line */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 30px;
+}
+
+.patients-header h1 {
+    font-size: 28px;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2); /* Subtle text shadow for clarity */
+}
+
+.patients-header p {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #ffffff; /* White text for better contrast */
+    font-style: italic;
+}
+

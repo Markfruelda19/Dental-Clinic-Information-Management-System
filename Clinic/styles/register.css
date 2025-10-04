@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f7f3ed, #e9dfcf);
+  margin: 0;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 700px; /* Wider container */
+  padding: 40px 35px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 20px;
+}
+
+.input-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Space between label and input */
+}
+
+.input-box label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+  text-align: left;
+}
+
+.input-box input,
+.input-box select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.input-box input::placeholder {
+  color: #aaa;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(55, 221, 180, 0.2);
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #636363;
+  background-color: #C9E9D2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #3d704b;
+  box-shadow: 0 6px 12px rgba(252, 116, 45, 0.3);
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+footer a {
+  color:  #3d704b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color:  #3d704b;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+}

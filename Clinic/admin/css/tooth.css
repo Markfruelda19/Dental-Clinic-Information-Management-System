@@ -1,0 +1,330 @@
+:root {
+  --primary-color: #0056a4;
+  --secondary-color: #003c7a;
+  --accent-color: #0197d6;
+  --background-color: #f4f6f9;
+  --card-background: #ffffff;
+  --text-color: #333333;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --tooth-no-treatment: #ffffff;
+  --tooth-has-treatment: #4da6ff;
+}
+
+/* General Body Styling */
+body {
+  font-family: Varela Round, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow: auto; /* Allow page scrolling */
+}
+
+/* Main Container */
+.container {
+  max-width: 1400px;
+  margin: auto;
+  background: var(--card-background);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* Responsive Columns */
+.left-column, .right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Chart Container */
+.chart-container {
+  position: relative;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  text-align: center;
+  max-height: 100vh;
+}
+
+.chart-container svg {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+}
+
+/* Interactive Spots */
+#Spots polygon, #Spots path {
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+#Spots polygon:hover, #Spots polygon:active, 
+#Spots path:hover, #Spots path:active {
+  fill: #e0f7fa !important;
+  stroke: var(--accent-color);
+  stroke-width: 2px;
+}
+
+.tooth {
+  stroke-width: 1;
+  stroke: #888888;
+  fill: var(--tooth-no-treatment);
+}
+
+.has-treatment {
+  fill: var(--tooth-has-treatment);
+}
+
+.clicked {
+  fill: #f9f871;
+  stroke-width: 2;
+  stroke: var(--accent-color);
+  filter: drop-shadow(0 0 5px rgba(0, 151, 214, 0.5));
+}
+
+/* Tooth Status Labels */
+.tooth-status {
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.tooth-status.healthy { background-color: #e7f3ea; color: #287233; }
+.tooth-status.cavity { background-color: #ffcccc; color: #a30000; }
+.tooth-status.filled { background-color: #d6ecff; color: #004085; }
+.tooth-status.crown { background-color: #ffe6cc; color: #aa5700; }
+.tooth-status.missing { background-color: #eeeeee; color: #666666; }
+
+/* Info History Styling */
+.info-history-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#toothInfo, #treatmentHistory {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+}
+
+#toothInfo h3, #treatmentHistory h4 {
+  margin-top: 0;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* Treatment History Scrolling */
+#treatmentHistory {
+  max-height: 400px; /* Set a max height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding-right: 10px; /* Add space for the scrollbar */
+}
+
+/* Styling for Treatment Table */
+#treatmentTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: 25px;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  display: block; /* Ensure it respects overflow */
+}
+
+#treatmentTable thead {
+  position: sticky;
+  top: 0; /* Keep the header visible when scrolling */
+  z-index: 1;
+  background-color: var(--primary-color);
+}
+
+#treatmentTable th, #treatmentTable td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+  white-space: nowrap; /* Prevent wrapping of text */
+}
+
+#treatmentTable th {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+#treatmentTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#treatmentTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Updated Text Box Styling */
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #dddddd;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Subtle background */
+  transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(1, 151, 214, 0.5);
+}
+
+textarea {
+  resize: none; /* Prevent resizing */
+  height: 40px; /* Fixed height */
+}
+
+/* Aligning Text Boxes and Labels */
+.treatment-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Spacing between label and input */
+}
+
+.treatment-form label {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* Buttons */
+button, .delete-btn, .edit-btn {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition), transform 0.2s ease;
+}
+
+/* Add Treatment Button */
+button[type="submit"] {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  color: white;
+  box-shadow: var(--box-shadow);
+  margin-top: 30px;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ff4d4d; /* Red for delete */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #e63939;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 77, 77, 0.4);
+}
+
+.delete-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 77, 77, 0.2);
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(1, 151, 214, 0.4);
+}
+
+.edit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(1, 151, 214, 0.2);
+}
+
+/* Tooltip Styling */
+.tooltip {
+  position: absolute;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition);
+  transform: translateY(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  #treatmentHistory {
+    max-height: 300px; /* Adjust height for smaller screens */
+  }
+
+  #treatmentTable {
+    overflow-x: auto; /* Enable horizontal scroll for small screens */
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+}

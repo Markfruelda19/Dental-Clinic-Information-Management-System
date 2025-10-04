@@ -1,0 +1,248 @@
+/* General Body Style */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container Style */
+.content {
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+.content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.content h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #000000, #000000);
+    margin: 10px auto 0;
+}
+
+/* Upload Form Style */
+.upload-form {
+    background-color: #f9fbff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-gap: 15px;
+    align-items: center;
+}
+
+.upload-form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+    text-align: right;
+    align-self: start;
+}
+
+.upload-form input[type="file"],
+.upload-form input[type="text"],
+.upload-form input[type="date"] {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: 0.3s;
+    width: 80%;
+    background-color: #ffffff;
+}
+
+.upload-form input:focus {
+    border-color: #000000;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+.upload-form button {
+    grid-column: 2; /* Align the button in the second column */
+    padding: 12px 20px;
+    font-size: 1rem;
+    background: linear-gradient(90deg, #000000, #000000);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+    width: 80%;
+}
+
+.upload-form button:hover {
+    background: linear-gradient(90deg, #000000, #000000);
+    box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+}
+
+
+/* Table Container */
+.table-container {
+    margin-top: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Table Style */
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.appointment-table thead {
+    background: linear-gradient(90deg, #000000, #000000);
+    color: #ffffff;
+    text-align: left;
+}
+
+.appointment-table th {
+    padding: 16px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.appointment-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.appointment-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.appointment-table tbody tr:hover {
+    background-color: #edf5ff;
+}
+
+.appointment-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #e0e4eb;
+    vertical-align: middle;
+    font-size: 1rem;
+}
+
+.appointment-table td:last-child {
+    text-align: center;
+}
+
+/* View and Download Buttons */
+.view-btn,
+.download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.view-btn {
+    background-color: #17a2b8;
+    color: #ffffff;
+}
+
+.view-btn:hover {
+    background-color: #138496;
+    box-shadow: 0 8px 16px rgba(23, 162, 184, 0.2);
+}
+
+.download-btn {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.download-btn:hover {
+    background-color: #218838;
+    box-shadow: 0 8px 16px rgba(40, 167, 69, 0.2);
+}
+
+/* No Data Message */
+.no-data {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #666;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+    }
+
+    .upload-form input[type="file"],
+    .upload-form input[type="text"],
+    .upload-form input[type="date"] {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .appointment-table thead {
+        display: none;
+    }
+
+    .appointment-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        border: 1px solid #e0e4eb;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        padding: 12px;
+        background-color: #ffffff;
+    }
+
+    .appointment-table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        font-size: 1rem;
+    }
+
+    .appointment-table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #555;
+        margin-right: 10px;
+    }
+}
